@@ -24,6 +24,6 @@ struct pow2<0> {
     static constexpr unsigned long value = 1ul;
 };
 
-};
+}
 
 #endif // __CAESAR_UTILS_POW2_HPP__

@@ -13,6 +13,6 @@ struct num_bits {
         BITS_IN_BYTE * sizeof(T);
 };
 
-};
+}
 
 #endif // __CAESAR_UTILS_TYPES_HPP__
