@@ -16,7 +16,8 @@ SOURCES=$(shell find $(TOP) -type f -iname '*.cpp' | grep -v test | grep -v main
 OBJECTS=$(foreach x, $(basename $(SOURCES)), $(x).o)
 
 TEST_SOURCES=$(shell find $(TOP) -type f -iname '*_test.cpp')
-TEST_BASENAMES=$(foreach x, $(basename $(TEST_SOURCES)), $(x))
+TEST_SOURCES_BASE=$(shell find . -type f -iname '*_test.cpp')
+TEST_BASENAMES=$(foreach x, $(basename $(TEST_SOURCES_BASE)), $(x))
 
 DEPS=$(OBJECTS:%.o=%.d)
 
@@ -42,6 +43,10 @@ test: $(OBJECTS) $(TEST_BASENAMES)
 
 
 .PHONY: all clean test
+
+help:
+	@echo "Run make <test-name> where <test-name> is the same as the test's source file name. Example: range_test (compiles range_test.cpp)"
+	@echo "Available tests: ${TEST_BASENAMES}"
 
 clean:
 	@rm -f *.tar
