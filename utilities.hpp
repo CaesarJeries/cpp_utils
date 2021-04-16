@@ -2,6 +2,8 @@
 #define __CAESAR_UTILS_UTILITIES_HPP__
 
 #include "pow2.hpp"
+#include "types.hpp"
+#include "range.hpp"
 
 
 
